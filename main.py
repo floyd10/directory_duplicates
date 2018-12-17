@@ -4,7 +4,7 @@ import os
 def get_dublicates(dir):
   list = []
   list_elements = []
-  files = [os.path.join(r,file) for r,d,f in os.walk(dir) for file in f]
+  files = [os.path.join(dirpath,file) for dirpath,dirnames,filenames in os.walk(dir) for file in filenames]
   for file in files:
       md5 = hashlib.md5(open(file,'rb').read()).hexdigest()
       if md5 not in list:
