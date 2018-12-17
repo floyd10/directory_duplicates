@@ -1,9 +1,6 @@
-import argparse
 import hashlib
 import os
-import glob
 from collections import Counter
-
 
 def get_files(dir):
   files = [os.path.join(r,file) for r,d,f in os.walk(dir) for file in f]
